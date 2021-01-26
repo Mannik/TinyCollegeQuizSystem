@@ -16,5 +16,16 @@ namespace TinyCollegeQuizSystem
         {
             InitializeComponent();
         }
+
+        private void manageQuizButton_Click(object sender, EventArgs e)
+        {
+            InstructorManageQuizForm manageForm = new InstructorManageQuizForm();
+            manageForm.ShowDialog();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

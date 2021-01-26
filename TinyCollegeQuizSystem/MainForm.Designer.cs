@@ -54,6 +54,7 @@ namespace TinyCollegeQuizSystem
             this.manageQuizButton.TabIndex = 1;
             this.manageQuizButton.Text = "Instructor Manage Quiz";
             this.manageQuizButton.UseVisualStyleBackColor = true;
+            this.manageQuizButton.Click += new System.EventHandler(this.manageQuizButton_Click);
             // 
             // exitButton
             // 
@@ -64,6 +65,7 @@ namespace TinyCollegeQuizSystem
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // label1
             // 
@@ -75,7 +77,7 @@ namespace TinyCollegeQuizSystem
             this.label1.TabIndex = 3;
             this.label1.Text = "Tiny College Quiz System";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +86,7 @@ namespace TinyCollegeQuizSystem
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.manageQuizButton);
             this.Controls.Add(this.takeQuizButton);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

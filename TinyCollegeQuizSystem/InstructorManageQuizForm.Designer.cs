@@ -45,6 +45,7 @@ namespace TinyCollegeQuizSystem
             this.newQuizButton.TabIndex = 0;
             this.newQuizButton.Text = "Start A New Quiz";
             this.newQuizButton.UseVisualStyleBackColor = true;
+            this.newQuizButton.Click += new System.EventHandler(this.newQuizButton_Click);
             // 
             // addButton
             // 
