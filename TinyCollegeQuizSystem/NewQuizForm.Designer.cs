@@ -30,20 +30,20 @@ namespace TinyCollegeQuizSystem
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.questionTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.option1TextBox = new System.Windows.Forms.TextBox();
+            this.option2TextBox = new System.Windows.Forms.TextBox();
+            this.option3TextBox = new System.Windows.Forms.TextBox();
+            this.option4TextBox = new System.Windows.Forms.TextBox();
             this.option1RadioButton = new System.Windows.Forms.RadioButton();
             this.option2RadioButton = new System.Windows.Forms.RadioButton();
             this.option3RadioButton = new System.Windows.Forms.RadioButton();
             this.option4RadioButton = new System.Windows.Forms.RadioButton();
-            this.updateButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -58,14 +58,14 @@ namespace TinyCollegeQuizSystem
             this.label1.TabIndex = 0;
             this.label1.Text = "Question:";
             // 
-            // textBox1
+            // questionTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 22);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(463, 139);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.WordWrap = false;
+            this.questionTextBox.Location = new System.Drawing.Point(127, 22);
+            this.questionTextBox.Multiline = true;
+            this.questionTextBox.Name = "questionTextBox";
+            this.questionTextBox.Size = new System.Drawing.Size(463, 139);
+            this.questionTextBox.TabIndex = 1;
+            this.questionTextBox.WordWrap = false;
             // 
             // label2
             // 
@@ -107,33 +107,33 @@ namespace TinyCollegeQuizSystem
             this.label5.TabIndex = 5;
             this.label5.Text = "Option 4:";
             // 
-            // textBox2
+            // option1TextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(127, 194);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(348, 20);
-            this.textBox2.TabIndex = 6;
+            this.option1TextBox.Location = new System.Drawing.Point(127, 194);
+            this.option1TextBox.Name = "option1TextBox";
+            this.option1TextBox.Size = new System.Drawing.Size(348, 20);
+            this.option1TextBox.TabIndex = 6;
             // 
-            // textBox3
+            // option2TextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(127, 239);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(348, 20);
-            this.textBox3.TabIndex = 7;
+            this.option2TextBox.Location = new System.Drawing.Point(127, 239);
+            this.option2TextBox.Name = "option2TextBox";
+            this.option2TextBox.Size = new System.Drawing.Size(348, 20);
+            this.option2TextBox.TabIndex = 7;
             // 
-            // textBox4
+            // option3TextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(127, 285);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(348, 20);
-            this.textBox4.TabIndex = 8;
+            this.option3TextBox.Location = new System.Drawing.Point(127, 285);
+            this.option3TextBox.Name = "option3TextBox";
+            this.option3TextBox.Size = new System.Drawing.Size(348, 20);
+            this.option3TextBox.TabIndex = 8;
             // 
-            // textBox5
+            // option4TextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(127, 333);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(348, 20);
-            this.textBox5.TabIndex = 9;
+            this.option4TextBox.Location = new System.Drawing.Point(127, 333);
+            this.option4TextBox.Name = "option4TextBox";
+            this.option4TextBox.Size = new System.Drawing.Size(348, 20);
+            this.option4TextBox.TabIndex = 9;
             // 
             // option1RadioButton
             // 
@@ -183,14 +183,15 @@ namespace TinyCollegeQuizSystem
             this.option4RadioButton.Text = "Option 4 is Key";
             this.option4RadioButton.UseVisualStyleBackColor = true;
             // 
-            // updateButton
+            // addButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(74, 389);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(100, 50);
-            this.updateButton.TabIndex = 14;
-            this.updateButton.Text = "Update the Question";
-            this.updateButton.UseVisualStyleBackColor = true;
+            this.addButton.Location = new System.Drawing.Point(74, 389);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(100, 50);
+            this.addButton.TabIndex = 14;
+            this.addButton.Text = "Add the Question";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // clearButton
             // 
@@ -200,6 +201,7 @@ namespace TinyCollegeQuizSystem
             this.clearButton.TabIndex = 15;
             this.clearButton.Text = "Clear All";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // closeButton
             // 
@@ -217,23 +219,24 @@ namespace TinyCollegeQuizSystem
             this.ClientSize = new System.Drawing.Size(694, 450);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.updateButton);
+            this.Controls.Add(this.addButton);
             this.Controls.Add(this.option4RadioButton);
             this.Controls.Add(this.option3RadioButton);
             this.Controls.Add(this.option2RadioButton);
             this.Controls.Add(this.option1RadioButton);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.option4TextBox);
+            this.Controls.Add(this.option3TextBox);
+            this.Controls.Add(this.option2TextBox);
+            this.Controls.Add(this.option1TextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.questionTextBox);
             this.Controls.Add(this.label1);
             this.Name = "NewQuizForm";
             this.Text = "NewQuizForm";
+            this.Load += new System.EventHandler(this.NewQuizForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,20 +245,20 @@ namespace TinyCollegeQuizSystem
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox questionTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox option1TextBox;
+        private System.Windows.Forms.TextBox option2TextBox;
+        private System.Windows.Forms.TextBox option3TextBox;
+        private System.Windows.Forms.TextBox option4TextBox;
         private System.Windows.Forms.RadioButton option1RadioButton;
         private System.Windows.Forms.RadioButton option2RadioButton;
         private System.Windows.Forms.RadioButton option3RadioButton;
         private System.Windows.Forms.RadioButton option4RadioButton;
-        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button closeButton;
     }
