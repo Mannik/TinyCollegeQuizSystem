@@ -211,6 +211,7 @@ namespace TinyCollegeQuizSystem
             this.closeButton.TabIndex = 16;
             this.closeButton.Text = "Close Form";
             this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // NewQuizForm
             // 

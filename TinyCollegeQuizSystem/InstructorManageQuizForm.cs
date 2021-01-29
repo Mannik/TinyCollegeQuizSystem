@@ -24,5 +24,16 @@ namespace TinyCollegeQuizSystem
             NewQuizForm quizForm = new NewQuizForm();
             quizForm.ShowDialog();
         }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            UpdateQuestionForm updateForm = new UpdateQuestionForm();
+            updateForm.ShowDialog();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

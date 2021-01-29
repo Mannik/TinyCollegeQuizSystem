@@ -62,6 +62,7 @@ namespace TinyCollegeQuizSystem
             this.closeButton.TabIndex = 2;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // label1
             // 
@@ -84,6 +85,7 @@ namespace TinyCollegeQuizSystem
             this.Controls.Add(this.updateQuestionsListBox);
             this.Name = "UpdateQuestionForm";
             this.Text = "UpdateQuestionForm";
+            this.Load += new System.EventHandler(this.UpdateQuestionForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -66,6 +66,7 @@ namespace TinyCollegeQuizSystem
             this.updateButton.TabIndex = 2;
             this.updateButton.Text = "Update Questions to A Quiz";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // deleteButton
             // 
@@ -86,6 +87,7 @@ namespace TinyCollegeQuizSystem
             this.exitButton.TabIndex = 4;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // InstructorManageQuizForm
             // 
